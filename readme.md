@@ -10,6 +10,6 @@ The app is made in node.js and is dockerized. For testing purpose follow steps b
 
     docker container run --name mongo_db -v mongo_db --network glocify -d mongo:latest
     
-    docker container run --name node_api -p 3000:3000 -e MONGODB_URI=mongodb://mongo_db:27017 -e PORT=3000 -e DB_NAME=Users -e DB_HOST=mongo_db --network glocify custom_node_app
+    docker container run --name node_api -p 3000:3000 -e MONGODB_URI=mongodb://mongo_db:27017 -e PORT=3000 -e DB_NAME=Users -e DB_HOST=mongo_db --network glocify anshumanraj/custom_node_app:1.0.0
 
 You can change the port you want to access from "-p xyz:3000".
