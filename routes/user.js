@@ -27,6 +27,16 @@ router.post("/register", async(req, res) =>{
                 gender: req.body.gender
             });
 
+            const token = await newuser.generateAuthToken();
+
+            res.cookie("jwt", token, { 
+                expires: new Date(Date.now() + 30000),
+                httpOnly: true
+        });
+
+        // console.log(cookie);
+
+
             const savedUser = await newuser.save();
             res.send("User added successfully!!!");
         }else{
@@ -51,17 +61,26 @@ router.post("/login", async (req, res) => {
         const password = req.body.password;
 
         const curruser = await user.findOne({email:email});
+        if(!curruser)return res.send("User doesn't exist");
 
-        const chkpassword = bcrypt.compare(password, curruser.password) 
+        const chkpassword = await bcrypt.compare(password, curruser.password
+            // , (err, data) => {
+            // if(err) throw err;
+            // if(data)return res.status(200).send("User Logged in Successfulluy");
+            // else return res.status(400).send("Invalid password");
+        // }
+        ) ;
+        const token = await curruser.generateAuthToken();
+
         // console.log(curruser);
         if(chkpassword){
-            res.send("User Logged in");
+            return res.send("User Logged in");
         }else{
-            res.status(400).send("Invalid  password");
+            return res.status(400).send("Invalid  password");
         }
 
     } catch (error) {
-        res.status(400).send("Invalid username or password");
+        return res.status(400).send("Invalid username or password");
     }
 });
 
