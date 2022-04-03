@@ -4,10 +4,17 @@ const bcrypt = require('bcrypt');
 const router = express.Router();
 
 require("../db/conn");
+
 const user = require("../models/user");
+const auth = require("../middlewares/auth");
+// const Register = require("..models/user")
 
 router.get("/register", (req, res) =>{
     res.render("users/register");
+} );
+
+router.get("/secret", auth, (req, res) =>{
+    return res.render("users/secret");
 } );
 
 
@@ -30,7 +37,7 @@ router.post("/register", async(req, res) =>{
             const token = await newuser.generateAuthToken();
 
             res.cookie("jwt", token, { 
-                expires: new Date(Date.now() + 30000),
+                expires: new Date(Date.now() + 3000000),
                 httpOnly: true
         });
 
@@ -71,6 +78,11 @@ router.post("/login", async (req, res) => {
         // }
         ) ;
         const token = await curruser.generateAuthToken();
+
+        res.cookie("jwt", token, { 
+            expires: new Date(Date.now() + 3000000),
+            httpOnly: true
+    });
 
         // console.log(curruser);
         if(chkpassword){

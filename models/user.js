@@ -18,7 +18,7 @@ const userSchema = new Schema({
 
 userSchema.methods.generateAuthToken = async function(){
     try {
-        // console.log("token creating");
+        console.log("token creating");
         const token = jwt.sign({_id: this._id}, process.env.SECRET_KEY); 
         this.tokens = this.tokens.concat({token:token});
         // console.log(token);
@@ -46,4 +46,6 @@ userSchema.methods.validPassword = function (password) {
     return bcrypt.compare(password, this.password);
 };
 
-module.exports = mongoose.model('User', userSchema);
+const Register = new mongoose.model('User', userSchema);
+
+module.exports = Register;
