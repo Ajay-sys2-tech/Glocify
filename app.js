@@ -2,10 +2,14 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const hbs = require("hbs");
+const cookieParser = require("cookie-parser");
+require('dotenv').config()
 
 
 require("./db/conn");
+
 const user = require("./models/user");
+const auth = require("./middlewares/auth");
 
 
 const port = process.env.PORT || 3000;
@@ -21,6 +25,7 @@ hbs.registerPartials(partials_path);
 
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: false}));
 
 
