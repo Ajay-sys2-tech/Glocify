@@ -13,3 +13,5 @@ The app is made in node.js and is dockerized. For testing purpose follow steps b
     docker container run --name node_api -p 3000:3000 -e MONGODB_URI=mongodb://mongo_db:27017 -e PORT=3000 -e DB_NAME=Users -e DB_HOST=mongo_db --network glocify anshumanraj/custom_node_app:1.0.0
 
 You can change the port you want to access from "-p xyz:3000".
+
+Future addition: vendor recommendation using dataset at: https://www.kaggle.com/datasets/retailrocket/ecommerce-dataset?select=events.csv
