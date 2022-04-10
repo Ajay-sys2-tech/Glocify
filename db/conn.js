@@ -1,6 +1,6 @@
 const { default: mongoose } = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/Users", {
+mongoose.connect("mongodb://mongo_db:27017/Users", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     // useCreateIndex: true
