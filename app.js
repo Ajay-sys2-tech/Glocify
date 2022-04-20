@@ -37,62 +37,10 @@ app.get("/", (req, res) =>{
 const userRoutes = require("./routes/user");
 app.use("/users", userRoutes);
 
-
-// app.get("/users/register", (req, res) =>{
-//     res.render("users/register");
-// } );
+const shopRoutes = require("./routes/shops");
+app.use("/shops", shopRoutes);
 
 
-//create a new user
-// app.post("/users/register", async(req, res) =>{
-//     try {
-//         const password = req.body.password;
-//         const confirmpassword = req.body.confirmpassword;
 
-//         if(password === confirmpassword){
-//             const newuser = new user({
-//                 name: req.body.name,
-//                 email: req.body.email,
-//                 phone: req.body.phone,
-//                 password: password,
-//                 gender: req.body.gender
-//             });
-
-//             const savedUser = await newuser.save();
-//             res.send("User added successfully!!!");
-//         }else{
-//             res.send("Password not matching!");
-//         }
-
-//     }catch (error){
-//         res.status(400).send(error);
-//     }
-// } );
-
-
-// // Login form
-// app.get("/users/login", (req, res) => {
-//     res.render("users/login");
-// });
-
-// //user login 
-// app.post("/users/login", async (req, res) => {
-//     try {
-//         const email = req.body.email;
-//         const password = req.body.password;
-
-//         const curruser = await user.findOne({email:email});
-
-//         console.log(curruser);
-//         if(curruser.password == password){
-//             res.send("User Logged in");
-//         }else{
-//             res.status(400).send("Invalid  password");
-//         }
-
-//     } catch (error) {
-//         res.status(400).send("Invalid username or password");
-//     }
-// });
 
 app.listen(port, () => console.log(`App listening on port ${port}!`))

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div style="display:flexbox direction:table-column">
+        <form action="/shops/register" method="POST" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Enter the name of your shop" required>
+            <input type="text" name="ownerName" placeholder="Enter the name of owner" required>
+            <input type="text" name="email" placeholder="Enter your email" required>
+            <input type="number" name="phone" placeholder="Enter your phhone no. " required>
+            <input type="password" name="password1" placeholder"Enter a password">
+            <input type="password" name="password2" placeholder"Re-enter your password">
+            <input type="text" name="category" placeholder="category of your shop" required>
+            <input type="number" name="panCard" placeholder="Enter your pan card number" required>
+            Display picture for your shop<input type="file" name="catalog" >
+            
+            <input type="submit" name="Register">
+    </form>
+
+    <h3>{{message}}</h3>
+    </div>
+    
+</body>
+</html>
