@@ -34,6 +34,6 @@ shopSchema.methods.validPassword = function (password) {
     return bcrypt.compare(password, this.password);
 };
 
-const Shops = new mongoose.model('Shop', shopSchema);
+const Shop = new mongoose.model('Shop', shopSchema);
 
-module.exports = Shops;
+module.exports = Shop;

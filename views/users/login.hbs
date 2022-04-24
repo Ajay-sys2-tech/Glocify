@@ -50,9 +50,9 @@
                                  <hr id="indicator">
                              </div>
                              <!--------------------------------------LOGIN FORM-------------->
-                             <form id="Loginform">
-                                 <input type="text" placeholder="Username">
-                                 <input type="password" placeholder="password">
+                             <form id="Loginform" action="/user/login" method="post">
+                                 <input type="text" name= "email" placeholder="Username">
+                                 <input type="password" name= "password" placeholder="password">
                                  <button type="submit" class="btn">Login</button>
                                  <a href=""> Forget Password</a>
                              </form>
