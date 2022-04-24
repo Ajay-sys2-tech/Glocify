@@ -1,4 +1,4 @@
-/*  --=================================GLOCIFY FRONT PAGE-==============================------*/
+/*  --=================================GLOCIFY FRONT PAGE-(Index page)==============================------*/
 
 *{
     margin: 0;
@@ -17,7 +17,7 @@ header{
 }
 
 ul{
-    float:left;
+    float:right;
     list-style-type:none;
     margin-top: 50px;
     margin-left: 5px;
@@ -39,11 +39,10 @@ ul li a:hover{
     transition: 0.6s ease;
 }
 .logo img{
-    float: right;
-    
+    float: left;
     height: auto;
-    margin-top: 10px;
-    margin-right: 50px;
+    margin-top: 1px;
+    margin-left: 20px;
     width: 200px;
 }
 
@@ -66,7 +65,7 @@ ul li a:hover{
     
 }
 
-/*-------============================== GLOCIFY INTRO 1 ===============------------------*/  
+/*-------============================== GLOCIFY INTRO 1 (SHOP WITH US===============------------------*/  
 body{
     font-family: 'Montserrat', sans-serif;
 }
@@ -97,6 +96,7 @@ body{
     font-weight: bold;
     color: rgb(240, 104, 104);
 }
+
 
 /*===========================================GLOCIFY INTRO 2 (SELL ON GLOCIFY)==============================*/
 
@@ -185,7 +185,7 @@ body{
 }
 .title-position{
     text-align: center;
-    margin: 0 auto 80px;
+    margin: 0 auto 50px;
     position: relative;
     line-height: 60px;
     color: #555;
@@ -221,7 +221,7 @@ body{
     transform: translateY(-10px);
 }
 
-/*--------------------------------------- footer-------------------------*/
+/*---------------------======================FOOTER SECTION FOR ALL =======================-------*/
 
 
 .container-foot{
@@ -304,10 +304,10 @@ margin-bottom: 10px;
 margin-left: 2px;
 }
 
-
+/*================================Yaha PE GLOCIFY INDEX FINISH =================================*/
  
 
-/*  ===================Ye New Header  ka area hai======================*/
+/*  =================== Ye New Header  ka area hai======================*/
 
 *{
     margin: 0;
@@ -319,8 +319,9 @@ margin-left: 2px;
   .navbar{
     display: flex;
     align-items: center;
-    padding: 20px;
-    
+    padding: 0px;
+    height: 20vh;
+    background-color: #FAD0C9FF;
   }
   nav{
     flex: 1;
@@ -335,7 +336,7 @@ margin-left: 2px;
   
   nav ul li{
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 8px;
   }
   a{
     text-decoration: none;
@@ -346,7 +347,7 @@ margin-left: 2px;
     font-size: larger;
     
   }
-  .container{
+  .container-head{
     max-width: 1300px;
     margin: auto;
     padding-right: 25px;
@@ -364,41 +365,120 @@ margin-left: 2px;
   .form-container{
     background: #fff;
     width: 300px;
-    height: 400px;
-    position: relative;
+    height: 450px;
     text-align: center;
-    padding: 20px 0;
+    position:relative;
+    padding: 15px 5px;
     margin: auto;
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);   
+}
+
+.form-container-login{
+    background: #fff;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    position:relative;
+    padding: 15px 5px;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);   
     overflow: hidden;
 }
 
 .form-container span{
       font-weight: bold;
-      padding: 0 10px;
+      padding: 0px 20px;
       color: black;
       cursor: pointer;
-      width: 100px;
+      width: 200px;
       display: inline-block;
-      
+      text-align: center;
+      margin-bottom: 0 px;
+
 }
+.form-container-login span{
+    font-weight: bold;
+    padding: 0 10px;
+    color: rgba(35, 38, 39, 0.534);
+    cursor: pointer;
+    width: 200px;
+    height: 10px;
+    display: inline-block;
+    margin-bottom: 0 px;
+    
+    
+}
+
+.form-container-login span .psw {
+    
+    padding-top: 0 5px;
+    display: block;
+    float: center;
+    text-align: center;
+  }
+
+  .form-container-login span .psw1 {
+    padding-top: 1px 1px;
+    display: block;
+    float: center;
+    text-align: center;
+  }
+
+  .form-container-login span.psw .a {
+    text-align: center;
+  }
+
+  .form-container-login span.psw:hover{
+    transform: translateY(-2px);
+    transition-delay: 0.1s ease;
+    color: #f30e0e;  
+}
+
+.form-container-login span.psw1:hover{
+    transform: translateY(-2px);
+    transition-delay: 0.1s ease;
+    color: #f30e0e;  
+}
+.form-container span.psw1:hover{
+    transform: translateY(-2px);
+    transition-delay: 0.1s ease;
+    color: #f30e0e;  
+}
+.form-container .form-btn span{
+    margin-bottom: 2px;
+    line-height: 5px;
+}
+
+
   .form-btn{
       display: inline-block;
   }
+  /* Ye form ka width aaur height ke liye hai */
   .form-container form{
       max-width: 300px;
       padding: 0 20px;
       position: absolute;
-      top: 120px;
+      top: 60px;
       transition: transform 0.5s;
   }
+  .form-container-login form{
+    max-width: 300px;
+    padding: 0 20px;
+    position: absolute;
+    top: 60px;
+    transition: transform 0.5s;
+}
+
   form input{
       width: 100%;
       height: 30px;
-      margin: 8px;
+      margin: 8px 0;
       padding: 0 10px;
       border: 1px solid #ccc;
   }
+
+
+
   form .btn{
       width: 100%;
       border: none ;
@@ -408,13 +488,7 @@ margin-left: 2px;
   form .btn:focus{
       outline: none;
   }
-#Loginform{
-    left: -300px;
 
-}
-#regform{
-    left: 0;
-}
 form a{
     font-size: 12px;
 
@@ -449,7 +523,85 @@ form a{
 
 }
 
-/*  ======= User Rating section ======*/
+
+
+/*======================Testimonials section ==========================*/
+
+
+.column-test {
+    float: left;
+    
+    margin-bottom: 16px;
+    padding: 0 8px;
+    
+    flex-basis: 25%;
+    min-width: 100px;
+    margin-bottom: 30px;
+    
+    }
+    
+  }
+  .column-test img{
+    width:100% ;
+}
+  
+  /* Display the columns below each other instead of side by side on small screens */
+  @media screen and (max-width: 650px) {
+    .column-test {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .container-test {
+    padding: 0 16px;
+  }
+  .container-test:hover{
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+    transform: translateY(-10px);
+  }
+  
+  /* Clear floats */
+  .container-test::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .container-test .h9{
+     font-size: 10px;
+  }
+
+  .container-test .p9{
+      font-size: 5px;
+  }
+
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+
+/*  ====================== User Rating section ==========================*/
 
 
   
@@ -491,26 +643,27 @@ form a{
     text-align: right;
   }
   
-  /* Clear floats after the columns */
+  /* Clear floats after the columns 
   .row:after {
     content: "";
     display: table;
     clear: both;
   }
-  
+  */
   /* The bar container */
-  .bar-container {
+  .bar-container-review {
     width: 100%;
     background-color: #f1f1f1;
     text-align: center;
     color: white;
+    
   }
   
   /* Individual bars */
-  .bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
+  .bar-5 {width: 60%; height: 18px; background-color: #ff9800; }
   .bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
   .bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
-  .bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+  .bar-2 {width: 4%; height: 18px; background-color: #04AA6D; }
   .bar-1 {width: 15%; height: 18px; background-color: #f44336;}
   
   /* Responsive layout - make the columns stack on top of each other instead of next to each other */
@@ -523,3 +676,119 @@ form a{
       display: none;
     }
   }
+
+
+
+  /* ===================DISPLAY PRODUCTS============*/
+
+.section-p1{
+    padding: 40px 80px;
+    
+}
+
+#product-display{
+    text-align: center;
+ 
+}
+#product-display .display-container{
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+#product-display .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #06c723;
+    /* use:- border-radius:25px for curvy borders */
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(12, 11, 11, 0.02);
+    margin: 15px 0;
+    transition: 0.3s ease;
+    position: relative;
+    margin-right: 20px;
+}
+#product-display .pro:hover{
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+    transform: translateY(-10px);
+}
+
+#product-display .pro img{
+    width: 100%;
+    border-radius: 20px;
+    
+}
+#product-display .pro .description span{
+    color: #606063;
+    font-size: 12px;
+    text-align: left;
+    
+}
+#product-display .pro .description{
+    text-align: left;
+}
+
+#product-display .pro .description h5{
+    padding-top: 7px;
+    color: #1b4105;
+    font-size: 16px;
+}
+#product-display .pro .description i{
+    font-size: 12px;
+    color: rgb(244, 181, 25);
+    
+}
+#product-display .pro .description h7{
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+}
+#product-display .pro  .cart{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #4ce966;
+    font-weight: 500;
+    color: #088178;
+    bottom: 20px;
+    right: 10px;
+}
+
+
+/* arrow slider*/
+#product-display  .pre-btn, .nxt-btn{
+    border: none;
+    max-width: 50px;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    cursor: pointer;
+
+}
+
+.pre-btn{
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.nxt-btn{
+    right: 0;
+}
+
+.pre-btn img, .nxt-btn img{
+    opacity: 0.2;
+    max-width: 40px;
+}
+
+.pre-btn:hover img, .nxt-btn:hover img{
+    opacity: 1;
+    max-width: 40px;
+}

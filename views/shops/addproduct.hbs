@@ -1,0 +1,230 @@
+
+<!--==============================Display All Products ===============================-->
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Glocify - Add Products</title>
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/fontawesome.min.css">
+        <link rel="stylesheet" href="/css/templatemo-style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"/>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+        
+
+    </head>
+
+    <!-----=================================HEADER SECTION HAI YE =====================-->
+
+    <body>
+        <div class="container">
+            <div class="navbar">
+
+                <div class="logo">
+                    <img src="../images/frontend/Glocify1.png">
+                    
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#"> <i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="#">Category</a></li>
+                        <li><a href="#">Sell Online</a></li>
+                        <li><a href="#">Review</a></ li>
+                        <li><a href="#"><i class="fa fa-fw fa-user"></i> Login</a></li>
+                    </ul>
+                 </nav>
+            </div>
+        </div>
+
+        <!--===========================================All Products Featured section====================-->
+
+
+<div class="container tm-mt-big tm-mb-big">
+    <div class="row">
+        <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+            <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+                <div class="row">
+                    <div class="col-12">
+                        <h12 class="tm-block-title d-inline-block">Add Product</h12>
+                    </div>
+                </div>
+                <div class="row tm-edit-product-row">
+                    <div class="col-xl-6 col-lg-6 col-md-12">
+                        <form action="" class="tm-edit-product-form">
+                            <div class="form-group mb-3">
+                                <label for="name">Product Name
+                </label>
+                                <input id="name" name="name" type="text" class="form-control validate" required />
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="description">Description
+                </label>
+                <textarea
+                  class="form-control validate"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group mb-3">
+                <label
+                  for="category"
+                  >Category</label
+                >
+                <select
+                  class="custom-select tm-select-accounts"
+                  id="category"
+                >
+                  <option selected>Select category</option>
+                  <option value="1">New Arrival</option>
+                  <option value="2">Most Popular</option>
+                  <option value="3">Trending</option>
+                </select>
+              </div>
+              <div class="row">
+                  <div class="form-group mb-3 col-xs-12 col-sm-6">
+                      <label
+                        for="expire_date"
+                        >Expire Date
+                      </label>
+                                <input id="expire_date" name="expire_date" type="text" class="form-control validate" data-large-mode="true" />
+                            </div>
+                            <div class="form-group mb-3 col-xs-12 col-sm-6">
+                                <label for="stock">Units In Stock
+                      </label>
+                                <input id="stock" name="stock" type="text" class="form-control validate" required />
+                            </div>
+                    </div>
+
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+                    <div class="tm-product-img-dummy mx-auto">
+                        <i class="fas fa-cloud-upload-alt tm-upload-icon" onclick="document.getElementById('fileInput').click();"></i>
+                    </div>
+                    <div class="custom-file mt-3 mb-3">
+                        <input id="fileInput" type="file" style="display:none;" />
+                        <input type="button" class="btn btn-primary btn-block mx-auto" value="UPLOAD PRODUCT IMAGE" onclick="document.getElementById('fileInput').click();" />
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-block text-uppercase">Add Product Now</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+        
+
+        <!------------------------------------------------FOOTER SECTION YAHA SE SURU HAI----------------------->
+
+        <footer>
+            <div class="footer">
+                <div class="Container-foot">
+                    <div class="row-foot">
+                        <div class="footer-col">
+                            <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Glocify</h4>
+                                <ul>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Our Services</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Affiliate program</a></li>
+                                </ul>
+                            
+                        </div>
+    
+                        <div class="footer-col">
+                            <h4>&nbsp;&nbsp;&nbsp;&nbsp;Get Help</h4>
+                            <ul>
+                                <li><a href="#">FAQ </a></li>
+                                <li><a href="#">Shipping </a></li>
+                                <li><a href="#">Returns</a></li>
+                                <li><a href="#">Orders</a></li>
+                                <li><a href="#">Payments</a></li>
+                            </ul>
+                        </div>
+    
+                        <div class="footer-col">
+                            <h4>&nbsp;&nbsp;&nbsp;Online Shop</h4>
+                            <ul>
+                                <li><a href="#">Watch</a></li>
+                                <li><a href="#">T-shirts</a></li>
+                                <li><a href="#">Shoes</a></li>
+                                <li><a href="#">Dresses</a></li>
+                            </ul>
+                        </div>
+    
+                        <div class="footer-col">
+                            <h4>&nbsp;&nbsp;&nbsp;Follow Us</h4>
+                            <ul>
+                                <li><a href="#">Facebook</a></li>
+                                <li><a href="#">Twitter</a></li>
+                                <li><a href="#">Instagram</a></li>
+                                <li><a href="#">Chat bot</a></li>
+                            </ul>        
+                        </div>
+    
+                        <div class="footer-col">
+                            <img src="Glocify1.png">         
+                        </div>
+                                   
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row-foot-1">
+                  <div class="col-7">
+                      <p2> Copyright© 2015 - 2022 www.glocify.com.– All Rights Reserved. Privacy Policy | Term of Service<br>----------</p2>
+                  </div>
+                </div>
+                
+            </div>
+        </footer> 
+
+        <!-------------------------------------JAVA SCRIPT SECTION YAHA LAST ME-->
+
+
+        <!-----------------------------------------JS SECTION FOR LOGIN-FORM-->
+
+        <script>
+            var Loginform = document.getElementById("Loginform");
+            var regform = document.getElementById("regform");
+            var indicator = document.getElementById("indicator");
+
+            function register(){
+                regform.style.transform ="translateX(0px)";
+                Loginform.style.transform ="translateX(0px)";
+                indicator.style.transform ="translateX(100px)";
+            }
+
+            function login(){
+                regform.style.transform ="translateX(300px)";
+                Loginform.style.transform ="translateX(300px)";
+                indicator.style.transform ="translateX(0px)";
+            }
+
+
+            const productContainers = [...document.querySelectorAll('.product-container')];
+const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+const preBtn = [...document.querySelectorAll('.pre-btn')];
+
+productContainers.forEach((item, i) => {
+    let containerDimenstions = item.getBoundingClientRect();
+    let containerWidth = containerDimenstions.width;
+
+    nxtBtn[i].addEventListener('click', () => {
+        item.scrollLeft += containerWidth;
+    })
+
+    preBtn[i].addEventListener('click', () => {
+        item.scrollLeft -= containerWidth;
+    })
+})
+
+        </script>
+        
+    </body>
+</html>

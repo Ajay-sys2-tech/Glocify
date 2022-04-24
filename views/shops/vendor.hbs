@@ -1,11 +1,9 @@
 
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Glocify Login</title>
-        <link rel="icon" type="image/x-icon" href="/images/frontend/favicon.ico">
+        <title>Vendor Front</title>
         <link rel="stylesheet" href="/css/index.css">
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
     </head>
@@ -13,7 +11,7 @@
     <!-------------------------------------------HEADER SECTION HAI YE ----------->
 
     <body>
-        <div class="container">
+        <div class="container">                      <!--  "Name:- Container-head"    -->
             <div class="navbar">
 
                 <div class="logo">
@@ -22,41 +20,47 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#"><i class="fa fa-home"></i> Home </a> </li>
-                        <li><a href="#">Category</a></li>
-                        <li><a href="#">Sell Online</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-user"></i>Home</a></li>
+                        <li><a href="#">My Shop</a></li>
+                        <li><a href="#">Add Products</a></li>
                         <li><a href="#">Review</a></li>
+                        <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
                     </ul>
                 </nav>
             </div>
         </div>      
 
-        <!--------------------------------------------LOGIN PAGE SECTION  ------------------->
+        <!--------------------------------------------Vendor product visible SECTION  ------------------->
 
-        <div class="account-page"> 
+        <div class="account-page">
             <div class="container">
                  <div class="row">
                      <div class="col-6">
-                        <p> The best deals are just <br>one click away!!</p>
+                        <p> The best deals are just<br> one click away!!</p>
                          <img src="../images/frontend/Login3.png">  
                          
                           
                      </div>
-                   
 
                      <div class="col-6">
-                         <div class="form-container-login">
+                         <div class="form-container">
                              <div class="form-btn">
-                                 <span onclick="login()">Login</span>
-    
-                                </div>
-                             <!--------------------------------------LOGIN FORM-------------->
+                                 <span onclick="register()">Register</span> 
+                                 
+                             </div>
+                             
+                             <!--------------------------------------Registration FORM-------------->
+
                               <form id="regform">
+                                <input type="text" placeholder="Enter Shop Name">
+                                <input type="text" placeholder="Enter Owner Name">
+                                <input type="email" placeholder="PAN/ GST Number">
                                 <input type="email" placeholder="Email/Phone Number">
-                                <input type="password" placeholder=" Enter Password"> 
-                                <button type="Submit" class="btn">Login</button>
-                                <span class="psw"><a href="#">Forgot&nbsp;Password?</a></span><br>
-                                <span class="psw1"><a href="#">New&nbsp;here?&nbsp;Register&nbsp;Now</a></span>
+                                <input type="password" placeholder=" Select Password">
+                                <input type="password2" placeholder=" Re-enter your Selected Password">
+                                {{!-- <input type="checkbox" width="1px" height="0.1px" value="Register as vendor"> 
+                                <a>Register as vendor account</a> --}}
+                                <button type="Submit" class="btn">Create your shop</button>
                               </form>
                             </div>
                      </div>
@@ -64,15 +68,15 @@
             </div> 
         </div>
 
-        <!---------FOOTER SECTION YAHA SE SURU HAI------------>
+
+        <!------------------------------------------------FOOTER SECTION YAHA SE SURU HAI----------------------->
 
         {{>footer}}
 
-        
-        <!--------------------------JAVA SCRIPT SECTION YAHA LAST ME-->
+        <!-------------------------------------JAVA SCRIPT SECTION YAHA LAST ME-->
 
 
-        <!-----------------------JS SECTION FOR LOGIN-FORM-->
+        <!-----------------------------------------JS SECTION FOR LOGIN-FORM-->
 
         <script>
             var Loginform = document.getElementById("Loginform");
@@ -95,3 +99,5 @@
         
     </body>
 </html>
+
+

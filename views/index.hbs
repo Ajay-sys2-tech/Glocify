@@ -3,10 +3,13 @@
 <head>
     
     <title>GLOCIFY</title>
+    <link rel="icon" type="image/x-icon" href="/images/frontend/favicon.ico">
     <meta rel="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet"  href="css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+
 
 </head>
    
@@ -19,11 +22,13 @@
                 </div>
     
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
                     <li><a href="#">Category</a></li>
                     <li><a href="#">Sell Online</a></li>
                     <li><a href="#">Reviews</a></li>
-                    <li><a href="users/login">login</a></li>
+                    <li><a href="users/login"><i class="fa fa-fw fa-user"></i>login</a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i> </a></li>
+                  
                 </ul>
             </div>
             <div class="title">
@@ -157,6 +162,51 @@
     </div>
   </div>
 
+
+  <!--=============================-TESTIMONIALS========================-->
+
+  {{!-- <div class="row">                
+  <div class="column-test">
+    <div class="card">
+      <img src="../images/frontend/product9.jpg" alt="Jane" style="width:100%">
+      <div class="container-test">
+        <h9>Jane Doe</h9>
+        <p class="title">CEO &amp; Founder</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column-test">
+    <div class="card">
+      <img src="../images/frontend/product9.jpg" alt="Mike" style="width:100%">
+      <div class="container-test">
+        <h9>Mike Ross</h9>
+        <p9 class="title">Art Director</p9>
+        <p9>Some text that describes me lorem ipsum ipsum lorem.</p9>
+        <p9>example@example.com</p9>
+        <p9><button class="button">Contact</button></p9>
+      </div>
+    </div>
+  </div>
+
+  <div class="column-test">
+    <div class="card">
+      <img src="../images/frontend/product9.jpg" alt="John" style="width:100%">
+      <div class="container-test">
+        <h9>John Doe</h9>
+        <p class="title">Designer</p>
+        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+        <p>example@example.com</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div> --}}
+
+
   <!---------------------------------Reviews---------------------------->
 
   <div class=" User Reviews">
@@ -178,8 +228,8 @@
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star checked"></span>
 <span class="fa fa-star"></span>
-
-<p>4.3 average based on 484 reviews.</p>
+<br><br>
+<p>4.3 average based on 484 reviews.<br><br></p>
 
 <hr  style="border:3px solid #f1f1f1">
  
@@ -247,75 +297,14 @@
           <div>20</div>
         </div>
       </div>
-</div>
+   </div>
+   <br>
 
 
 
   <!-----========================FOOTER SECTION==========================-->
 
-  
-    <footer>
-        <div class="footer">
-            <div class="Container-foot">
-                <div class="row-foot">
-                    <div class="footer-col">
-                        <h4>Glocify</h4>
-                            <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Our Services</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Affiliate program</a></li>
-                            </ul>
-                        
-                    </div>
-
-                    <div class="footer-col">
-                        <h4>Get Help</h4>
-                        <ul>
-                            <li><a href="#">FAQ </a></li>
-                            <li><a href="#">Shipping </a></li>
-                            <li><a href="#">Returns</a></li>
-                            <li><a href="#">Orders</a></li>
-                            <li><a href="#">Payments</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h4>Online Shop</h4>
-                        <ul>
-                            <li><a href="#">Watch</a></li>
-                            <li><a href="#">T-shirts</a></li>
-                            <li><a href="#">Shoes</a></li>
-                            <li><a href="#">Dresses</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-col">
-                        <h4>Follow Us</h4>
-                        <ul>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Instagram</a></li>
-                            <li><a href="#">Chat bot</a></li>
-                        </ul>        
-                    </div>
-
-                    <div class="footer-col">
-                        <img src="images/frontend/Glocify1.png">         
-                    </div>
-                               
-                    </div>
-                </div>
-            </div>
-
-            <div class="row-foot-1">
-              <div class="col-7">
-                  <p2> Copyright© 2015 - 2022 www.glocify.com.– All Rights Reserved. Privacy Policy | Term of Service<br>----------</p2>
-              </div>
-            </div>
-            
-        </div>
-    </footer> 
+  {{>footer}}
 
 </body>
 </html>
