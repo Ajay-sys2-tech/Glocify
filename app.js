@@ -35,7 +35,7 @@ app.get("/", (req, res) =>{
 } );
 
 const userRoutes = require("./routes/user");
-app.use("/users", userRoutes);
+app.use("/user", userRoutes);
 
 const shopRoutes = require("./routes/shops");
 app.use("/shops", shopRoutes);

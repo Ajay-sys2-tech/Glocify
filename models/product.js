@@ -10,9 +10,10 @@ require('dotenv').config();
 const productSchema = new Schema({
     name: {type: String, required: true},
     desc: {type: String, required: true},
-    price: {type: number, required: true},
+    price: {type: Number, required: true},
+    image: {type:String, required: true},
     sellerID: {type: String, required: true}, 
-    rating: {type: number}
+    rating: {type: Number}
 });
 
 

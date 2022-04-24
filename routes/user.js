@@ -22,6 +22,8 @@ router.get("/secret", auth, (req, res) =>{
 //create a new user
 router.post("/register", async(req, res) =>{
     try {
+
+        
         const password = req.body.password;
         const confirmpassword = req.body.confirmpassword;
 
