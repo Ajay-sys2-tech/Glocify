@@ -50,9 +50,9 @@
     
                                 </div>
                              <!--------------------------------------LOGIN FORM-------------->
-                              <form id="regform">
-                                <input type="email" placeholder="Email/Phone Number">
-                                <input type="password" placeholder=" Enter Password"> 
+                              <form id="regform" action="/shops/login" method="POST">
+                                <input type="email" placeholder="Email/Phone Number" name="email">
+                                <input type="password" placeholder=" Enter Password" name="password"> 
                                 <button type="Submit" class="btn">Login</button>
                                 <span class="psw"><a href="#">Forgot&nbsp;Password?</a></span>
                                 <span class="psw"><a href="#">Register&nbsp;Now</a></span>

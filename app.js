@@ -14,7 +14,7 @@ const auth = require("./middlewares/auth");
 
 const port = process.env.PORT || 3000;
 
-const static_path = path.join(__dirname, "/public");
+const static_path = path.join(__dirname, "/public/");
 const partials_path = path.join(__dirname, "/views/partials");
 
 

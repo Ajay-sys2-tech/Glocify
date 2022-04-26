@@ -13,8 +13,8 @@ router.get("/register", (req, res) =>{
     res.render("users/register");
 } );
 
-router.get("/secret", auth, (req, res) =>{
-    return res.render("users/secret");
+router.get("/cart", auth, (req, res) =>{
+    return res.render("users/cart");
 } );
 
 
@@ -23,6 +23,8 @@ router.get("/secret", auth, (req, res) =>{
 router.post("/register", async(req, res) =>{
     try {
 
+        if(await user.findOne({email: req.body.email}))
+         res.send("User already exists");
         
         const password = req.body.password;
         const confirmpassword = req.body.confirmpassword;
@@ -31,23 +33,24 @@ router.post("/register", async(req, res) =>{
             const newuser = new user({
                 name: req.body.name,
                 email: req.body.email,
-                phone: req.body.phone,
-                password: password,
-                gender: req.body.gender
+                // phone: req.body.phone,
+                password: password
+                // gender: req.body.gender
             });
 
+            console.log(newuser.password);
             const token = await newuser.generateAuthToken();
 
             res.cookie("jwt", token, { 
                 expires: new Date(Date.now() + 3000000),
                 httpOnly: true
-        });
+            });
 
         // console.log(cookie);
 
-
             const savedUser = await newuser.save();
             res.send("User added successfully!!!");
+            
         }else{
             res.send("Incorrect email or password!");
         }

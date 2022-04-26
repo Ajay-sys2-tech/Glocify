@@ -16,7 +16,11 @@ const productSchema = new Schema({
     rating: {type: Number}
 });
 
-
+productSchema.pre("save", async function(next) {
+   
+    this.image = this.image.substring(6);
+    next();
+});
 
 
 const Product = new mongoose.model('Product', productSchema);

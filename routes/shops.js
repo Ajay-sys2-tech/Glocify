@@ -71,10 +71,10 @@ router.post("/register", upload.single('catalog'), async(req, res) =>{
         else{
             const newShop = new Shop({
                 name: req.body.name,
-                category: req.body.category,
+                category: "Area 51",
                 ownerName: req.body.ownerName,
                 email: req.body.email,
-                phone: req.body.phone,
+                phone: 0000000000,
                 panCard: req.body.panCard,
                 password: req.body.password1
                 
@@ -118,10 +118,11 @@ router.post("/login", async (req, res) => {
     
         const url = `/shops/addProduct/:${id}`; 
 
-        // const myProducts = await Product.findById({(id)});
+        const myProducts = await Product.find({sellerID: ":" + id});
         // console.log(myProducts);
+        // console.log(typeof id + "  " + id);
 
-        if(chkPassword) return res.render(`shops/myShop`, {myShop: found, url: url});
+        if(chkPassword) return res.render(`shops/myShop`, {myShop: found, url: url, myProducts: myProducts});
 
         else return res.send("Invalid email or password");
     }
@@ -162,6 +163,16 @@ router.post("/addProduct", productUpload.single('productImage'), async (req, res
         console.log(error);
 
     }
+})
+
+
+
+// ---------------------Displaying all the products for the users to add in their cart---------------
+
+router.get("/display", (req, res) => {
+    const allProducts = Product.find();
+
+    res.render("users/display", {allProducts: allProducts});
 })
 
 module.exports = router

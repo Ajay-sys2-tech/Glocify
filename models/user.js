@@ -8,9 +8,9 @@ require('dotenv').config();
 const userSchema = new Schema({
     name: {type: String, required: true},
     email: {type: String, required: true, unique: true},
-    phone: {type: Number, required: true, unique: true},
+    // phone: {type: Number, unique: true},
     password: {type: String, required: true},
-    gender: {type: String, required: true},
+    // gender: {type: String},
     tokens: [{
         token:  {type: String, required: true}
     }]

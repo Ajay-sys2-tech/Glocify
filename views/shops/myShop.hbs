@@ -11,7 +11,15 @@
 
     <h2>{{myShop.name}}</h2>
     <h2>{{myShop.email}}</h2>
+    
+    <img src="{{myShop.catalog}}" alt="Myshop catalog"  height="300rem" length="200rem"><br>
+    {{#each myProducts}}
+    <h1>{{this.name}}</h1>
+    <h1>{{this.image}}</h1>
 
+    <img src="/images/frontend/product1.jpg" alt="no pic">
+    <img src="{{this.image}}" alt="no pic">
+    {{/each}}
     <a href={{url}}>Add Products</a>
 
    {{!-- <h2> {{link "Add Products" id}}</h2> --}}

@@ -51,11 +51,11 @@
                              
                              <!--------------------------------------Registration FORM-------------->
 
-                              <form id="regform">
-                                <input type="text" placeholder="Your Name">
-                                <input type="email" placeholder="Email/Phone Number">
-                                <input type="password" placeholder=" Select Password">
-                                <input type="password2" placeholder=" Re-Enter Selected Password">
+                              <form id="regform" action="/user/register" method="POST">
+                                <input type="text" placeholder="Your Name" name="name">
+                                <input type="email" placeholder="Email" name="email">
+                                <input type="password" placeholder=" Select Password" name="password">
+                                <input type="password2" placeholder=" Re-Enter Selected Password" name="confirmpassword">
                                 <input type="checkbox" value="lsRememberMe" id="rememberMe"> <a for="rememberMe">Remember me</a> </span>
                                
                                 <button type="Submit" class="btn">Register</button>
