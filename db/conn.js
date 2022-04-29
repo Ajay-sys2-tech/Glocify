@@ -4,8 +4,8 @@ require('dotenv').config();
     
 
 mongoose.connect(
-    // process.env.uri
-    "mongodb://localhost:27017/Users"
+    process.env.uri
+    // "mongodb://localhost:27017/Users"
     , {
     useNewUrlParser: true,
     useUnifiedTopology: true,
