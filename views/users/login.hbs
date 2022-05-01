@@ -22,9 +22,9 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#"><i class="fa fa-home"></i> Home </a> </li>
+                        <li><a href="/"><i class="fa fa-home"></i> Home </a> </li>
                         <li><a href="#">Category</a></li>
-                        <li><a href="#">Sell Online</a></li>
+                        <li><a href="/shops/register">Sell Online</a></li>
                         <li><a href="#">Review</a></li>
                     </ul>
                 </nav>
@@ -51,12 +51,12 @@
     
                                 </div>
                              <!--------------------------------------LOGIN FORM-------------->
-                              <form id="regform">
-                                <input type="email" placeholder="Email/Phone Number">
-                                <input type="password" placeholder=" Enter Password"> 
+                              <form id="regform" action="/user/login" method="POST">
+                                <input type="email" placeholder="Email" name="email">
+                                <input type="password" placeholder=" Enter Password" name="password"> 
                                 <button type="Submit" class="btn">Login</button>
                                 <span class="psw"><a href="#">Forgot&nbsp;Password?</a></span><br>
-                                <span class="psw1"><a href="#">New&nbsp;here?&nbsp;Register&nbsp;Now</a></span>
+                                <span class="psw1"><a href="/user/register">New&nbsp;here?&nbsp;Register&nbsp;Now</a></span>
                               </form>
                             </div>
                      </div>

@@ -4,22 +4,24 @@ const router = express.Router();
 const Cart = require('../models/cart');
 const Product = require('../models/product');
 
-router.get('/cart/add-to-cart/:id', function (req, res) {
+router.get('/add-to-cart/:id', function (req, res) {
     const productId = req.params.id;
     const cart = new Cart(req.session.cart ? req.session.cart : {});
 
     Product.findById(productId, function (err, product) {
         if(err) {
+            console.log(err);
             return res.redirect('/');
         }
         cart.add(product, product.id);
         req.session.cart = cart;
         console.log(req.session.cart);
-        res.redirect('/');
+        res.redirect('/user/display');
+        
     })
 });
 
-router.get('/cart/reduce/:id', function (req, res, next) {
+router.get('/reduce/:id', function (req, res, next) {
     const productId = req.params.id;
     const cart = new Cart(req.session.cart ? req.session.cart : {});
     cart.reduceByOne(productId);
@@ -27,7 +29,7 @@ router.get('/cart/reduce/:id', function (req, res, next) {
     res.redirect('/cart');
 });
 
-router.get('/cart/remove/:id', function (req, res, next) {
+router.get('/remove/:id', function (req, res, next) {
     const productId = req.params.id;
     const cart = new Cart(req.session.cart ? req.session.cart : {});
     cart.removeItem(productId);

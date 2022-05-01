@@ -20,7 +20,7 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
+                        <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
                         <li><a href="#">Category</a></li>
                         <li><a href="#">Sell Online</a></li>
                         <li><a href="#">Review</a></li>
@@ -47,18 +47,20 @@
                                  <span onclick="register()">Register</span>                                 
                              </div>                             
                              <!--------------------------------------Registration FORM-------------->
-                              <form id="regform">
-                                <input type="text" placeholder="Enter Shop Name">
-                                <input type="text" placeholder="Enter Owner Name">
-                                <input type="email" placeholder="PAN/ GST Number">
-                                <input type="email" placeholder="Email/Phone Number">
-                                <input type="password" placeholder=" Select Password">
-                                <input type="password2" placeholder=" Re-enter your Selected Password">
+                              <form id="regform" action="/shops/register" method="POST" enctype="multipart/form-data">
+                                <input type="text" placeholder="Enter Shop Name" name="name">
+                                <input type="text" placeholder="Enter Owner Name" name="ownerName">
+                                <input type="text" placeholder="Category of your shop" name="category">
+                                <input type="text" placeholder="PAN/ GST Number" name="panCard">
+                                <input type="email" placeholder="Email" name="email">
+                                <input type="password" placeholder=" Select Password" name="password1">
+                                <input type="password2" placeholder=" Re-enter your Selected Password" name="password2">
+                                <input type="file" name="catalog">
                                 {{!-- <input type="checkbox" width="1px" height="0.1px" value="Register as vendor"> 
                                 <a>Register as vendor account</a> --}}
 
                                 <button type="Submit" class="btn">Create your shop</button>
-                                <span class="psw1"><a href="#">Have&nbsp;account?&nbsp;Login&nbsp;Now</a></span>
+                                <span class="psw1"><a href="/shops/login">Have&nbsp;account?&nbsp;Login&nbsp;Now</a></span>
                               </form>
                             </div>
                      </div>

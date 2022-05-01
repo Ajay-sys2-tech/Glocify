@@ -7,7 +7,17 @@ require("../db/conn");
 
 const user = require("../models/user");
 const auth = require("../middlewares/auth");
-// const Register = require("..models/user")
+const Product = require("../models/product");
+
+
+
+//to show all the items 
+router.get("/display", async (req, res) => {
+    const allProducts = await Product.find();
+    
+    res.render("users/display", { products: allProducts });
+})
+
 
 router.get("/register", (req, res) =>{
     res.render("users/register");
@@ -17,11 +27,17 @@ router.get("/secret", auth, (req, res) =>{
     return res.render("users/secret");
 } );
 
+router.get("/cart", auth, (req, res) =>{
+    return res.render("users/cart");
+} );
+
 
 
 //create a new user
 router.post("/register", async(req, res) =>{
     try {
+
+        
         const password = req.body.password;
         const confirmpassword = req.body.confirmpassword;
 
@@ -31,7 +47,7 @@ router.post("/register", async(req, res) =>{
                 email: req.body.email,
                 phone: req.body.phone,
                 password: password,
-                gender: req.body.gender
+                // gender: req.body.gender
             });
 
             const token = await newuser.generateAuthToken();
@@ -51,6 +67,7 @@ router.post("/register", async(req, res) =>{
         }
 
     }catch (error){
+        console.log(error);
         res.status(400).send(error);
     }
 } );

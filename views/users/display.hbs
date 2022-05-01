@@ -45,23 +45,23 @@
             <button class="pre-btn"><img src="../images/frontend/arrow.png" alt=""></button>
             <button class="nxt-btn"><img src="../images/frontend/arrow.png" alt=""></button>
             <div class="display-container">
-
+                {{#each products}}
                 <div class="pro">
-                    <img src="../images/frontend/product9.jpg" alt="">
+                    <img src={{this.image}} alt="Product image">
                     <div class="description">
                         <span>Nike</span>
-                        <h5>Cotton T-shirt</h5>
+                        <h5>{{this.name}}</h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h7>Rs 400</h7>
+                        <h7>Rs {{this.price}}</h7>
                     </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i> </a>
+                    <a href="/cart/add-to-cart/{{this._id}}"><i class="fal fa-shopping-cart cart"></i> </a>
                 </div>
-
+                {{/each}}
                 <!--===ADDING n PRODUCTS IN PRODUCT SECTION===== -->
                 <div class="pro">
                     <img src="../images/frontend/product9.jpg" alt="">
@@ -76,7 +76,7 @@
                         </div>
                         <h7>Rs 400</h7>
                     </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i> </a>
+                    <a href="/cart/add-to-cart/:{{this._id}}"><i class="fal fa-shopping-cart cart"></i> </a>
                 </div>
 
 

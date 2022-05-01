@@ -28,11 +28,11 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#"> <i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="/"> <i class="fa fa-home"></i> Home</a></li>
                         <li><a href="#">My shop</a></li>
                         <li><a href="#">orders</a></li>
                         <li><a href="#">Review</a></ li>
-                        <li><a href="#"><i class="fa fa-fw fa-user"></i>{{myShop.ownerName}}</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-user"></i>User</a></li>
                     </ul>
                  </nav>
             </div>
@@ -41,23 +41,22 @@
         <!--===========================//  Vendor portfolio  //====================-->
 
         <div class="wrap cf">
-            <h1 class="projTitle">Welcome Back to<span></span> {{myShop.name}}</h1>
+            <h1 class="projTitle">My Store<span></span> Table</h1>
             <div class="heading cf">
-              <h15>My Products</h15>
+              <h15>My Product Cart</h15>
               <div class="jem">
-                <a href={{url}} class="continue">Add More Product</a>
+                <a href="#" class="continue">Add More Product</a>
               </div> 
             </div>
 
             <div class="project-shopcart">
                 <div class="myshop">
-                    {{#each myProducts}}
                     <div class="box-1">
-                        <img src={{this.image}} alt={{this.name}}>
+                        <img src="../images/frontend/product1.jpg" alt="">
                         <div class="content-shop">
-                            <h16>{{this.name}}</h16>
-                            <h17>{{this.desc}}</h17>
-                            <h18>Price: Rs. {{this.price}}</h18>:</h18>
+                            <h16>Product Name</h16>
+                            <h17>Short description</h17>
+                            <h18>Price:</h18>
                             <p15 class="shop-unit">Stock: <input value="3"> </p15>
                             <p15 class="remove-btn">
                                 <i class="fa fa-trash"></i>
@@ -69,7 +68,7 @@
                             </p17>
                         </div>
                     </div>
-                    {{/each}}
+
                     <div class="box-1"> 
                         <img src="../images/frontend/product1.jpg" alt="">
                         <div class="content-shop">

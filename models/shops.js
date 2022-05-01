@@ -12,10 +12,10 @@ const shopSchema = new Schema({
     name: {type: String, required: true},
     ownerName: {type: String, required: true},
     email: {type: String, required: true, unique: true},
-    phone: {type: Number, required: true, unique: true},
+    // phone: {type: Number, required: true, unique: true},
     password: {type: String, required: true},
     category: {type: String, required: true},
-    panCard: {type: Number, required: true},
+    panCard: {type: String, required: true},
     catalog: {type: String, required: true}
 });
 
@@ -23,6 +23,9 @@ shopSchema.pre("save", async function(next) {
     if(this.isModified("password")) {
         this.password = await bcrypt.hash(this.password, 10);
     }
+
+    this.catalog = this.catalog.substring(6);
+    next();
     next();
 });
 
@@ -34,6 +37,6 @@ shopSchema.methods.validPassword = function (password) {
     return bcrypt.compare(password, this.password);
 };
 
-const Shops = new mongoose.model('Shop', shopSchema);
+const Shop = new mongoose.model('Shop', shopSchema);
 
-module.exports = Shops;
+module.exports = Shop;
