@@ -19,7 +19,7 @@ router.get('/cart/add-to-cart/:id', function (req, res) {
     })
 });
 
-// new comment
+// new comment 2
 
 
 router.get('/cart/reduce/:id', function (req, res, next) {
