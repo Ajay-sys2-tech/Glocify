@@ -19,6 +19,9 @@ router.get('/cart/add-to-cart/:id', function (req, res) {
     })
 });
 
+// new comment
+
+
 router.get('/cart/reduce/:id', function (req, res, next) {
     const productId = req.params.id;
     const cart = new Cart(req.session.cart ? req.session.cart : {});
