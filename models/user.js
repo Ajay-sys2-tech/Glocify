@@ -10,7 +10,7 @@ const userSchema = new Schema({
     email: {type: String, required: true, unique: true},
     phone: {type: Number, required: true, unique: true},
     password: {type: String, required: true},
-    gender: {type: String, required: true},
+    // gender: {type: String, required: true},
     tokens: [{
         token:  {type: String, required: true}
     }]

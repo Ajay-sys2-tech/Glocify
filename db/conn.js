@@ -1,4 +1,6 @@
 const { default: mongoose } = require("mongoose");
+require('dotenv').config();
+    
 
 mongoose.connect("mongodb://mongo_db:27017/Users", {
     useNewUrlParser: true,

@@ -1,12 +1,15 @@
 const express = require("express");
+const session = require("express-session");
 const app = express();
 const path = require("path");
 const hbs = require("hbs");
 const cookieParser = require("cookie-parser");
+const MongoStore = require("connect-mongo");
+
 require('dotenv').config()
 
 
-require("./db/conn");
+const dbConnection = require("./db/conn");
 
 const user = require("./models/user");
 const auth = require("./middlewares/auth");
@@ -27,6 +30,28 @@ hbs.registerPartials(partials_path);
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false}));
+// app.use(session({
+//     secret:'mysupersecret',
+//     resave: false,
+//     saveUninitialized: false,
+//     store: new MongoStore({mongooseConnection: dbConnection.connection}),
+//     cookie: {maxAge: 180 * 60 * 1000}
+// }));
+
+
+app.use(session({
+    secret:'mysupersecret',
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: process.env.uri }),
+    cookie: {maxAge: 180 * 60 * 1000}
+  }));
+
+  
+app.use((req, res, next) => {
+    res.locals.session = req.session;
+    next();
+});
 
 
 
@@ -35,64 +60,19 @@ app.get("/", (req, res) =>{
 } );
 
 const userRoutes = require("./routes/user");
-app.use("/users", userRoutes);
+app.use("/user", userRoutes);
+
+const shopRoutes = require("./routes/shops");
+app.use("/shops", shopRoutes);
+
+const cartRoutes = require("./routes/cart");
+app.use("/cart", cartRoutes);
+
+app.get("*", (req, res) =>  {
+    res.render("error");
+})
 
 
-// app.get("/users/register", (req, res) =>{
-//     res.render("users/register");
-// } );
 
-
-//create a new user
-// app.post("/users/register", async(req, res) =>{
-//     try {
-//         const password = req.body.password;
-//         const confirmpassword = req.body.confirmpassword;
-
-//         if(password === confirmpassword){
-//             const newuser = new user({
-//                 name: req.body.name,
-//                 email: req.body.email,
-//                 phone: req.body.phone,
-//                 password: password,
-//                 gender: req.body.gender
-//             });
-
-//             const savedUser = await newuser.save();
-//             res.send("User added successfully!!!");
-//         }else{
-//             res.send("Password not matching!");
-//         }
-
-//     }catch (error){
-//         res.status(400).send(error);
-//     }
-// } );
-
-
-// // Login form
-// app.get("/users/login", (req, res) => {
-//     res.render("users/login");
-// });
-
-// //user login 
-// app.post("/users/login", async (req, res) => {
-//     try {
-//         const email = req.body.email;
-//         const password = req.body.password;
-
-//         const curruser = await user.findOne({email:email});
-
-//         console.log(curruser);
-//         if(curruser.password == password){
-//             res.send("User Logged in");
-//         }else{
-//             res.status(400).send("Invalid  password");
-//         }
-
-//     } catch (error) {
-//         res.status(400).send("Invalid username or password");
-//     }
-// });
 
 app.listen(port, () => console.log(`App listening on port ${port}!`))
