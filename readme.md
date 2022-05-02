@@ -1,6 +1,10 @@
 # Online Shoping Arcade
 It is a place where vendors can register themselves and people csan buy ites from their local stores.
 The app is made in node.js and is dockerized. For testing purpose follow steps below:
+# Creating image yourself
+pull the repository and navigate to that directory
+then run the command:
+docker build -t anshumanraj/custom_node_app:1.0.0 .
 # For running in docker
 1. Create a volume:
     docker volume create mongo_db
